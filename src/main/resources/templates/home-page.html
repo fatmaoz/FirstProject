@@ -1,0 +1,40 @@
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"><head>
+
+    <title>Homepage</title>
+    <script type="text/javascript">
+        function validateUserName(){
+            var userName = document.getElementById('yn').value;
+            if(userName.length < 2){
+                alert("your name should have at least 2 cahr");
+                return false;
+            }
+            else {
+                return true;
+            }
+
+        }
+    </script>
+</head>
+<body>
+
+<h1 align="center">Love Calculator </h1>
+
+<form action="process-homepage" method="get" th:object="${userInfo}" >
+<div align="center">
+<p>
+<label for="yn">Your name : </label>
+<input type="text" id="yn" name="userName"/>
+</p>
+<p>
+    <label for="cn">Crush Name : </label>
+    <input type="text" id="cn" name="crushName"/>
+</p>
+
+<input type="submit" value="calculate" >
+
+</div>
+</form>
+</body>
+</html>

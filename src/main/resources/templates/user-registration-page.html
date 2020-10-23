@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+</head>
+<body>
+    <h1 align="center">Please register here</h1>
+<div>
+    <form action="/registiration-sucess" method="post" th:object="${userReg}">
+        <label> User : </label>
+        <input type="text" id="name" th:field="*{name}">
+        <br/>
+        <label>User Name : </label>
+        <input type="text" id="uname" th:field="*{userName}">
+        <br/>
+        <label>Password:</label>
+        <input type="password" id="pass" th:field="*{password}">
+        <br/>
+
+        <label>Country</label>
+        <select name="country" th:field="*{countryName}" id="countryId" class="custom-select">
+            <option th:value="Turkey" th:text="Turkey"></option>
+            <option th:value="UK" th:text="United+' '+ Kingdom"></option>
+            <option th:value="Ind" th:text="India"></option>
+            <option th:value="USA" th:text="America"></option>
+        </select>
+<br>
+        <label> Hobbies: </label>
+<br>
+        Reading <input type="checkbox" th:field="*{hobbies}" th:value="Reading" name="Reading"/>
+        Programming<input type="checkbox" th:field="*{hobbies}" th:value="Programming" name="Programming"/>
+        Travel<input type="checkbox" th:field="*{hobbies}" th:value="Travel" name="Travel"/>
+        Cricket<input type="checkbox" th:field="*{hobbies}" th:value="Cricket" name="Cricket"/>
+<br>
+<label>Gender :</label>
+        <br>
+        <input type="radio" th:field="*{gender}" th:value="Male"/>Male
+        <input type="radio" th:field="*{gender}" th:value="Female"/>Female
+
+        <br/><br/><br/>
+        <input type="submit" value="Register">
+
+    </form>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Registered</title>
+</head>
+<body>
+
+
+<h1> Your Registiration is successfull</h1>
+<h2>The details entered by you are :</h2>
+    User :     <span th:text="${userRegs.name}"> </span><br>
+    UserName : <span th:text="${userRegs.userName}"/><br/>
+    Password : <span th:text="${userRegs.password}"/><br>
+    Country :  <span th:text="${userRegs.countryName}"/><br/>
+    Hobbies : <li  th:each="${userRegs.hobbies}" ></li>
+
+</body>
+</html>
