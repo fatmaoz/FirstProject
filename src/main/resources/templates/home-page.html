@@ -3,11 +3,19 @@
       xmlns:th="http://www.thymeleaf.org"><head>
 
     <title>Homepage</title>
+    <style type="text/css">
+        .error{
+            color: red;
+            position: fixed;
+            text-align: left;
+            margin-left: 30px;
+        }
+    </style>
     <script type="text/javascript">
         function validateUserName(){
             var userName = document.getElementById('yn').value;
-            if(userName.length < 2){
-                alert("your name should have at least 2 cahr");
+            if(userName.length < 3){
+                alert("your name should have at least 3 cahr");
                 return false;
             }
             else {
@@ -25,14 +33,23 @@
 <div align="center">
 <p>
 <label for="yn">Your name : </label>
-<input type="text" id="yn" name="userName"/>
-</p>
+<input type="text" id="yn" th:field="*{userName}"  />
+    <label th:if="${#fields.hasErrors('userName')}" th:class="error" th:errors="*{userName}"></label>
 <p>
     <label for="cn">Crush Name : </label>
     <input type="text" id="cn" name="crushName"/>
+    <label th:if="${#fields.hasErrors('crushName')}" th:class="error" th:errors="*{crushName}"></label>
+
 </p>
 
-<input type="submit" value="calculate" >
+<p>
+    <input type="checkbox" th:field="*{termAndCondition}" id="check">
+    <label>I am agrreing that this is for fun</label>
+    <label th:if="${#fields.hasErrors('termAndCondition')}" th:class="error" th:errors="*{termAndCondition}"></label>
+
+</p>
+
+<input type="submit" value="calculate" onsubmit="return validateUserName()">
 
 </div>
 </form>
