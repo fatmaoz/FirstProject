@@ -19,4 +19,6 @@ public class UserRegistrationDTO {
     private String [] hobbies;
     private String gender;
 
+    private CommunicationDTO communicationDTO;
+
 }

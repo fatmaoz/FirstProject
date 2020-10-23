@@ -40,8 +40,22 @@
         <input type="radio" th:field="*{gender}" th:value="Male"/>Male
         <input type="radio" th:field="*{gender}" th:value="Female"/>Female
 
+        <div align="center">
+            <h3>Communication</h3>
+            <label>Email</label>
+            <input type="text" th:field="*{communicationDTO.email}"/>
+
+            <input type="text" th:field="*{communicationDTO.phone}"/>
+
+        </div>
         <br/><br/><br/>
         <input type="submit" value="Register">
+
+
+
+
+
+        //26 dk sonrasini izlemedim
 
     </form>
 </div>

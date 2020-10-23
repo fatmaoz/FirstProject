@@ -15,7 +15,9 @@
     UserName : <span th:text="${userRegs.userName}"/><br/>
     Password : <span th:text="${userRegs.password}"/><br>
     Country :  <span th:text="${userRegs.countryName}"/><br/>
-    Hobbies : <li  th:each="${userRegs.hobbies}" ></li>
+    Hobbies : <li  th:each="${userRegs.hobbies}" ></li><br/>
+    Email :  <span th:text="${userRegs.communicationDTO}"/>
+    Phone : <span th:text="${}"
 
 </body>
 </html>
