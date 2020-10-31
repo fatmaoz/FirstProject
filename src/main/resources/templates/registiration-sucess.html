@@ -11,13 +11,18 @@
 
 <h1> Your Registiration is successfull</h1>
 <h2>The details entered by you are :</h2>
-    User :     <span th:text="${userRegs.name}"> </span><br>
-    UserName : <span th:text="${userRegs.userName}"/><br/>
-    Password : <span th:text="${userRegs.password}"/><br>
-    Country :  <span th:text="${userRegs.countryName}"/><br/>
-    Hobbies : <li  th:each="${userRegs.hobbies}" ></li><br/>
-    Email :  <span th:text="${userRegs.communicationDTO}"/>
-    Phone : <span th:text="${}"
+    User :     <span th:text="${userReg.name}"> </span><br>
+    UserName : <span th:text="${userReg.userName}"/><br/>
+    Password : <span th:text="${userReg.password}"/><br>
+    Country :  <span th:text="${userReg.countryName}"/><br/>
+    Hobbies : <li  th:text="${userReg.hobbies}" ></li><br/>
+    Gender :  <span th:text="${userReg.gender}"/><br/>
+    Age :  <span th:text="${userReg.age}"/><br/>
+
+    Email :  <span th:text="${userReg.communicationDTO.email}"/><br/>
+    Phone : <span th:text="${userReg.communicationDTO.phone}"/>
+
+
 
 </body>
 </html>

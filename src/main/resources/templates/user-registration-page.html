@@ -30,7 +30,8 @@
 <br>
         <label> Hobbies: </label>
 <br>
-        Reading <input type="checkbox" th:field="*{hobbies}" th:value="Reading" name="Reading"/>
+
+        Reading <input type="checkbox" th:field="*{hobbies}" th:value="checkboxValue" name="Reading"/>
         Programming<input type="checkbox" th:field="*{hobbies}" th:value="Programming" name="Programming"/>
         Travel<input type="checkbox" th:field="*{hobbies}" th:value="Travel" name="Travel"/>
         Cricket<input type="checkbox" th:field="*{hobbies}" th:value="Cricket" name="Cricket"/>
@@ -39,6 +40,9 @@
         <br>
         <input type="radio" th:field="*{gender}" th:value="Male"/>Male
         <input type="radio" th:field="*{gender}" th:value="Female"/>Female
+        Age : <input type="text" th:field="*{age}" th:value="Age"/>
+
+        <br/>
 
         <div align="center">
             <h3>Communication</h3>
@@ -55,7 +59,6 @@
 
 
 
-        //26 dk sonrasini izlemedim
 
     </form>
 </div>

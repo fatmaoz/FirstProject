@@ -16,8 +16,9 @@ public class UserRegistrationDTO {
     private String userName;
     private char[] password;
     private String  countryName;
-    private String [] hobbies;
+    private String []hobbies;
     private String gender;
+    private String age;
 
     private CommunicationDTO communicationDTO;
 
