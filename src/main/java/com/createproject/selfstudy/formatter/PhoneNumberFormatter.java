@@ -12,21 +12,31 @@ public class PhoneNumberFormatter implements Formatter<Phone> {
 
         System.out.println("inside the parse method of the Phone");
         //logic
-        String [] phoneNumberArray = completePhoneNumber.split("-");
-
         Phone phone = new Phone();
-        phone.setCountryCode(phoneNumberArray[0]);
-        phone.setUserNumber(phoneNumberArray[1]);
+        String [] phoneNumberArray = completePhoneNumber.split("-");
+        int index = completePhoneNumber.indexOf("-");
+        if(index== -1){
+            phone.setCountryCode("91");
+            phone.setUserNumber(phoneNumberArray[0]);
+        }else {
 
+            phone.setCountryCode(phoneNumberArray[0]);
+            phone.setUserNumber(phoneNumberArray[1]);
 
+        }
         return phone;
     }
 
     @Override
-    public String print(Phone object, Locale locale) {
-        return null;
+    public String print(Phone phone, Locale locale) {
+
+
+        return phone.getCountryCode() + "-" + phone.getUserNumber()  ;
     }
+
+
 }
+
 
 
 
