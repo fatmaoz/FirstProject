@@ -5,6 +5,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Register</title>
+    <style type="text/css">
+        .error{
+            color: red;
+            position: fixed;
+            text-align: left;
+            margin-left: 30px;
+        }
+    </style>
 </head>
 <body>
     <h1 align="center">Please register here</h1>
@@ -41,6 +49,7 @@
         <input type="radio" th:field="*{gender}" th:value="Male"/>Male
         <input type="radio" th:field="*{gender}" th:value="Female"/>Female
         Age : <input type="text" th:field="*{age}" th:value="Age"/>
+        <label th:if="${#fields.hasErrors('age')}" th:class="error" th:errors="*{age}"></label>
 
         <br/>
 

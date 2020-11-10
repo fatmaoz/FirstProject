@@ -3,7 +3,6 @@ package com.createproject.selfstudy.api;
 import lombok.*;
 
 import javax.validation.constraints.AssertTrue;
-import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 

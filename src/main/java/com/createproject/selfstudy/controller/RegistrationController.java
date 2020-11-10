@@ -4,8 +4,13 @@ import com.createproject.selfstudy.api.CommunicationDTO;
 import com.createproject.selfstudy.api.Phone;
 import com.createproject.selfstudy.api.UserRegistrationDTO;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import javax.validation.Valid;
+import java.util.List;
 
 @Controller
 public class RegistrationController {
@@ -25,8 +30,17 @@ public class RegistrationController {
     }
 
     @RequestMapping("/registiration-sucess")
-    public String sucessRegistration(@ModelAttribute("userReg")UserRegistrationDTO userRegistrationDTO){
+    public String sucessRegistration(@Valid @ModelAttribute("userReg")UserRegistrationDTO userRegistrationDTO, BindingResult result){
 
+        if (result.hasErrors()){
+            System.out.println("My page has error");
+            List<ObjectError> allErrors = result.getAllErrors();
+
+            for (ObjectError error : allErrors){
+                System.out.println(error);
+            }
+            return "user-registration-page";
+        }
         return "registiration-sucess";
     }
 }

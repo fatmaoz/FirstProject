@@ -1,11 +1,10 @@
 package com.createproject.selfstudy.api;
 
+import com.createproject.selfstudy.validator.Age;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
-import java.util.List;
 
 @Getter
 @Setter
@@ -18,7 +17,9 @@ public class UserRegistrationDTO {
     private String  countryName;
     private String []hobbies;
     private String gender;
-    private String age;
+
+    @Age(lower = 30 , upper = 75 )
+    private Integer age;
 
     private CommunicationDTO communicationDTO;
 
